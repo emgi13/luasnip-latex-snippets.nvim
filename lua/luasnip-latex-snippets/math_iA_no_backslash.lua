@@ -25,6 +25,11 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "inf", name = "\\infty" }, "\\infty"),
     parse_snippet({ trig = "inn", name = "in " }, "\\in "),
     parse_snippet({ trig = "SI", name = "SI" }, "\\SI{$1}{$2}"),
+
+    -- Braket snippets
+    with_priority({ trig = "bra", name = "bra" }, "\\bra{$1}$0 "),
+    with_priority({ trig = "ket", name = "ket" }, "\\ket{$1}$0 "),
+    with_priority({ trig = "bk", name = "braket" }, "\\braket{$1}$0 "),
   }
 end
 
