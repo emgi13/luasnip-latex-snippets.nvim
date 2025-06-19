@@ -67,6 +67,30 @@ function M.retrieve(is_math)
     ),
     s(
       {
+        trig = "(%a+)ket",
+        wordTrig = false,
+        regTrig = true,
+        name = "ket",
+        priority = 100,
+      },
+      f(function(_, snip)
+        return string.format("\\ket{%s}", snip.captures[1])
+      end, {})
+    ),
+    s(
+      {
+        trig = "(%a+)bra",
+        wordTrig = false,
+        regTrig = true,
+        name = "bra",
+        priority = 100,
+      },
+      f(function(_, snip)
+        return string.format("\\bra{%s}", snip.captures[1])
+      end, {})
+    ),
+    s(
+      {
         trig = "(%a+)ora",
         wordTrig = false,
         regTrig = true,
