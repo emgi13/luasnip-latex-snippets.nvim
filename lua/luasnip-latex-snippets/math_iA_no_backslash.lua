@@ -32,7 +32,7 @@ function M.retrieve(is_math)
     with_priority({ trig = "bk", name = "braket" }, "\\braket{$1}$0 "),
 
     -- Dagger
-    parse_snippet({ trig = "dag", name = "Dagger" }, "^\\dagger"),
+    parse_snippet({ trig = "dag", name = "Dagger" }, "^\\dagger "),
   }
 end
 
