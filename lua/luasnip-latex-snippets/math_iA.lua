@@ -177,6 +177,7 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "CC", name = "C" }, "\\mathbb{C}"),
     parse_snippet({ trig = "QQ", name = "Q" }, "\\mathbb{Q}"),
     parse_snippet({ trig = "ZZ", name = "Z" }, "\\mathbb{Z}"),
+    parse_snippet({ trig = "FF", name = "Field" }, "\\mathbb{F}"),
     parse_snippet({ trig = "UU", name = "cup" }, "\\cup "),
     parse_snippet({ trig = "NN", name = "n" }, "\\mathbb{N}"),
     parse_snippet({ trig = "||", name = "mid" }, " \\mid "),
