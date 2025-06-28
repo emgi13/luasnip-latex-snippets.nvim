@@ -23,7 +23,7 @@ M.setup = function(opts)
 
   if opts.allow_on_markdown then
     vim.api.nvim_create_autocmd("FileType", {
-      pattern = { "markdown", "quarto" },
+      pattern = { "markdown", "quarto", "markdown.mdx" },
       group = augroup,
       once = true,
       callback = function()
