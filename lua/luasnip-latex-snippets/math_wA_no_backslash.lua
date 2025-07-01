@@ -25,6 +25,9 @@ function M.retrieve(is_math)
 
     parse_snippet({ trig = "set", name = "set" }, [[ \\{$1\\} $0 ]]),
     parse_snippet({ trig = "fun", name = "function map" }, "f \\colon $1 \\R \\to \\R \\colon $0"),
+    -- Probability
+    parse_snippet({ trig = "Prob", name = "Probability" }, "\\text{Pr}\\left[ $1 \\right] $0"),
+    parse_snippet({ trig = "Exp", name = "Expectation" }, "\\text{E}\\left[ $1 \\right] $0"),
 
     parse_snippet(
       { trig = "abs", name = "absolute value \\abs{}" },
