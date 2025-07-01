@@ -209,6 +209,13 @@ function M.retrieve(is_math)
 
     -- Equivalent
     parse_snippet({ trig = "eqq", name = "Equiv" }, "\\equiv"),
+
+    -- Brackets
+    parse_snippet({ trig = "@(", name = "Round Bracket" }, "\\left( $1 \\right) $0"),
+    parse_snippet({ trig = "@[", name = "Square Bracket" }, "\\left[ $1 \\right] $0"),
+    parse_snippet({ trig = "@{", name = "Curve Bracket" }, "\\left\\{ $1 \\right\\} $0"),
+    parse_snippet({ trig = "@|", name = "Abs Bracket" }, "\\left| $1 \\right| $0"),
+    parse_snippet({ trig = "@<", name = "Angle Bracket" }, "\\left< $1 \\right> $0"),
   }
 end
 
