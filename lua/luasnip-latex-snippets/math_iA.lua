@@ -182,14 +182,14 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "NN", name = "n" }, "\\mathbb{N}"),
     parse_snippet({ trig = "||", name = "mid" }, " \\mid "),
     parse_snippet({ trig = "Nn", name = "cap" }, "\\cap "),
-    parse_snippet({ trig = "bmat", name = "bmat" }, "\\begin{bmatrix} $1 \\end{bmatrix} $0"),
-    parse_snippet({ trig = "uuu", name = "bigcup" }, "\\bigcup_{${1:i \\in ${2: I}}} $0"),
+    parse_snippet({ trig = "bmat", name = "bmat" }, "\\begin{bmatrix} $1 \\end{bmatrix}$0"),
+    parse_snippet({ trig = "uuu", name = "bigcup" }, "\\bigcup_{${1:i \\in ${2: I}}}$0"),
     parse_snippet({ trig = "DD", name = "D" }, "\\mathbb{D}"),
     parse_snippet({ trig = "HH", name = "H" }, "\\mathbb{H}"),
     parse_snippet({ trig = "lll", name = "l" }, "\\ell"),
     parse_snippet(
       { trig = "dint", name = "integral", priority = 300 },
-      "\\int_{${1:-\\infty}}^{${2:\\infty}} ${3:${TM_SELECTED_TEXT}} $0"
+      "\\int_{${1:-\\infty}}^{${2:\\infty}} ${3:${TM_SELECTED_TEXT}}$0"
     ),
 
     parse_snippet({ trig = "==", name = "equals" }, [[&= $1 \\\\]]),
@@ -200,7 +200,7 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "=>", name = "implies" }, "\\implies"),
     parse_snippet({ trig = "simp", name = "short implies" }, "\\Rightarrow"),
     parse_snippet({ trig = "=<", name = "implied by" }, "\\impliedby"),
-    parse_snippet({ trig = "<<", name = "<<" }, "\\ll"),
+    parse_snippet({ trig = "<<", name = "<<" }, "\\ll "),
 
     parse_snippet({ trig = "<=", name = "leq" }, "\\le "),
     parse_snippet({ trig = ">=", name = "geq" }, "\\ge "),
@@ -209,14 +209,14 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "conj", name = "conjugate" }, "\\overline{$1}$0"),
 
     -- Equivalent
-    parse_snippet({ trig = "eqq", name = "Equiv" }, "\\equiv"),
+    parse_snippet({ trig = "eqq", name = "Equiv" }, "\\equiv "),
 
     -- Brackets
-    parse_snippet({ trig = "@)", name = "Round Bracket" }, "\\left( $1 \\right) $0"),
-    parse_snippet({ trig = "@]", name = "Square Bracket" }, "\\left[ $1 \\right] $0"),
-    parse_snippet({ trig = "@}", name = "Curve Bracket" }, "\\left\\{ $1 \\right\\ } $0"),
-    parse_snippet({ trig = "@|", name = "Abs Bracket" }, "\\left| $1 \\right| $0"),
-    parse_snippet({ trig = "@>", name = "Angle Bracket" }, "\\left< $1 \\right> $0"),
+    parse_snippet({ trig = "@)", name = "Round Bracket" }, "\\left( $1 \\right)$0"),
+    parse_snippet({ trig = "@]", name = "Square Bracket" }, "\\left[ $1 \\right]$0"),
+    parse_snippet({ trig = "@}", name = "Curve Bracket" }, "\\left\\{ $1 \\right\\ }$0"),
+    parse_snippet({ trig = "@|", name = "Abs Bracket" }, "\\left| $1 \\right|$0"),
+    parse_snippet({ trig = "@>", name = "Angle Bracket" }, "\\left< $1 \\right>$0"),
   }
 end
 

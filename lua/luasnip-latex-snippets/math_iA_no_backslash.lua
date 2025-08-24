@@ -17,23 +17,23 @@ function M.retrieve(is_math)
 
   return {
     parse_snippet({ trig = "thh", name = "th" }, "^{\\text{th}}"),
-    parse_snippet({ trig = "sq", name = "\\sqrt{}" }, "\\sqrt{${1:${TM_SELECTED_TEXT}}} $0"),
+    parse_snippet({ trig = "sq", name = "\\sqrt{}" }, "\\sqrt{${1:${TM_SELECTED_TEXT}}}$0"),
     parse_snippet({ trig = "case", name = "cases" }, "\\begin{cases}\n\t$1\n\\end{cases}"),
 
-    with_priority({ trig = "hat", name = "hat" }, "\\hat{$1}$0 "),
-    with_priority({ trig = "bar", name = "bar" }, "\\overline{$1}$0 "),
+    with_priority({ trig = "hat", name = "hat" }, "\\hat{$1}$0"),
+    with_priority({ trig = "bar", name = "bar" }, "\\overline{$1}$0"),
 
     parse_snippet({ trig = "inf", name = "\\infty" }, "\\infty"),
     parse_snippet({ trig = "inn", name = "in " }, "\\in "),
     parse_snippet({ trig = "SI", name = "SI" }, "\\SI{$1}{$2}"),
 
     -- Braket snippets
-    with_priority({ trig = "bra", name = "bra" }, "\\bra{$1}$0 "),
-    with_priority({ trig = "ket", name = "ket" }, "\\ket{$1}$0 "),
-    with_priority({ trig = "bk", name = "braket" }, "\\braket{$1}$0 "),
+    with_priority({ trig = "bra", name = "bra" }, "\\bra{$1}$0"),
+    with_priority({ trig = "ket", name = "ket" }, "\\ket{$1}$0"),
+    with_priority({ trig = "bk", name = "braket" }, "\\braket{$1}$0"),
 
     -- Dagger
-    parse_snippet({ trig = "dag", name = "Dagger" }, "^\\dagger "),
+    parse_snippet({ trig = "dag", name = "Dagger" }, "^\\dagger"),
   }
 end
 
