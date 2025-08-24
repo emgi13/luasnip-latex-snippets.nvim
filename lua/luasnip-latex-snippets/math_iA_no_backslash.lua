@@ -19,6 +19,10 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "thh", name = "th" }, "^{\\text{th}}"),
     parse_snippet({ trig = "sq", name = "\\sqrt{}" }, "\\sqrt{${1:${TM_SELECTED_TEXT}}}$0"),
     parse_snippet({ trig = "case", name = "cases" }, "\\begin{cases}\n\t$1\n\\end{cases}"),
+    parse_snippet(
+      { trig = "bal", name = "Begin Aligned" },
+      "\\begin{aligned}\n\t$1\n\\end{aligned}"
+    ),
 
     with_priority({ trig = "hat", name = "hat" }, "\\hat{$1}$0"),
     with_priority({ trig = "bar", name = "bar" }, "\\overline{$1}$0"),
