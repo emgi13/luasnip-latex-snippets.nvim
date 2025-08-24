@@ -196,6 +196,7 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "!=", name = "not equals" }, "\\neq "),
     parse_snippet({ trig = "compl", name = "complement" }, "^{c}"),
     parse_snippet({ trig = "__", name = "subscript" }, "_{$1}$0"),
+    parse_snippet({ trig = "^^", name = "superscript" }, "^{$1}$0"),
     parse_snippet({ trig = "=>", name = "implies" }, "\\implies"),
     parse_snippet({ trig = "simp", name = "short implies" }, "\\Rightarrow"),
     parse_snippet({ trig = "=<", name = "implied by" }, "\\impliedby"),
