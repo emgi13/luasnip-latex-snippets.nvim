@@ -125,6 +125,62 @@ M.setup_markdown = function()
   local normal_wA_tex = {
     parse_snippet({ trig = "mk", name = "Math" }, "$${1:${TM_SELECTED_TEXT}}$"),
     parse_snippet({ trig = "dm", name = "Block Math" }, "$$\n${1:${TM_SELECTED_TEXT}}\n$$"),
+    parse_snippet(
+      { trig = "blem", name = "Lemma" },
+      [[\begin{lemma}{${1:Name}}{${2:Label}}
+${3:Statement}
+\end{lemma}
+$0]]
+    ),
+    parse_snippet(
+      { trig = "bthe", name = "Theorem" },
+      [[\begin{theorem}{${1:Name}}{${2:Label}}
+${3:Statement}
+\end{theorem}
+$0]]
+    ),
+    parse_snippet(
+      { trig = "bdef", name = "Definition" },
+      [[\begin{definition}{${1:Name}}{${2:Label}}
+${3:Statement}
+\end{definition}
+$0]]
+    ),
+    parse_snippet(
+      { trig = "bcor", name = "Corollary" },
+      [[\begin{corollary}{${1:Name}}{${2:Label}}
+${3:Statement}
+\end{corollary}
+$0]]
+    ),
+    parse_snippet(
+      { trig = "bexa", name = "Example" },
+      [[\begin{example}{${1:Name}}{${2:Label}}
+${3:Statement}
+\end{example}
+$0]]
+    ),
+    parse_snippet(
+      { trig = "brem", name = "Remark" },
+      [[\begin{remark}{${1:Name}}{${2:Label}}
+${3:Statement}
+\end{remark}
+$0]]
+    ),
+    parse_snippet(
+      { trig = "bexe", name = "Exercise" },
+      [[\begin{exercise}{${1:Name}}{${2:Label}}
+${3:Statement}
+\end{exercise}
+$0]]
+    ),
+    parse_snippet(
+      { trig = "bpro", name = "Proof" },
+      [[\begin{proofbox}{${1:Name}}
+${3:Statement}
+\end{proofbox}
+$0]]
+    ),
   }
   vim.list_extend(filtered, normal_wA_tex)
 
