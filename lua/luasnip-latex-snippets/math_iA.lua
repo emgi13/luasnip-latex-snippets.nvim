@@ -198,6 +198,7 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "uuu", name = "bigcup" }, "\\bigcup_{${1:i \\in ${2: I}}}$0"),
     parse_snippet({ trig = "DD", name = "D" }, "\\mathbb{D}"),
     parse_snippet({ trig = "HH", name = "H" }, "\\mathbb{H}"),
+    parse_snippet({ trig = "II", name = "Indicator" }, "\\mathds{1}"),
     parse_snippet({ trig = "lll", name = "l" }, "\\ell"),
     parse_snippet(
       { trig = "dint", name = "integral", priority = 300 },
