@@ -31,6 +31,11 @@ end
 
 local ts_utils = require("luasnip-latex-snippets.util.ts_utils")
 M.is_math = function(treesitter)
+  local filetype = vim.bo.filetype
+  if filetype == "latex" or filetype == "tex" then
+    return vim.fn["vimtex#syntax#in_mathzone"]() == 1
+  end
+
   if treesitter then
     return ts_utils.in_mathzone()
   end

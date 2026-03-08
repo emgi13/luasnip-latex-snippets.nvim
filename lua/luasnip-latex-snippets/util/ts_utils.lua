@@ -4,6 +4,7 @@ local MATH_NODES = {
     displayed_equation = true,
     inline_formula = true,
     math_environment = true,
+    latex_block = true,
 }
 
 local TEXT_NODES = {
