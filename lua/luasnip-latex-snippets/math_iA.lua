@@ -227,7 +227,7 @@ function M.retrieve(is_math)
     -- Brackets
     parse_snippet({ trig = "@)", name = "Round Bracket" }, "\\left( $1 \\right)$0"),
     parse_snippet({ trig = "@]", name = "Square Bracket" }, "\\left[ $1 \\right]$0"),
-    parse_snippet({ trig = "@}", name = "Curve Bracket" }, "\\left\\{ $1 \\right\\ }$0"),
+    parse_snippet({ trig = "@}", name = "Curve Bracket" }, "\\left\\{ $1 \\right\\\\}$0"),
     parse_snippet({ trig = "@|", name = "Abs Bracket" }, "\\left| $1 \\right|$0"),
     parse_snippet({ trig = "@>", name = "Angle Bracket" }, "\\left\\langle $1 \\right\\rangle$0"),
   }
