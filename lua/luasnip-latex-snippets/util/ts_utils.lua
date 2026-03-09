@@ -52,12 +52,11 @@ function M.in_mathzone()
     local node = vim.treesitter.get_node({ ignore_injections = false })
     local current_filetype = vim.bo.filetype
 
-    -- Check if we are in a markdown file and inside a code block
     if current_filetype == "markdown" or current_filetype == "quarto" then
         local block_node = node
         while block_node do
             if CODE_BLOCK_NODES[block_node:type()] then
-                return false -- If in a code block in markdown, never consider it math zone
+                return false
             end
             block_node = block_node:parent()
         end
@@ -66,9 +65,20 @@ function M.in_mathzone()
     while node do
         if TEXT_NODES[node:type()] then
             return false
-        elseif MATH_NODES[node:type()] then
+        end
+
+        if MATH_NODES[node:type()] then
             return true
         end
+        
+        -- Special handling for injected language root (source_file)
+        -- If we reach the root of the injected language (source_file) without finding a math node
+        -- and its parent is nil, it means the entire injected content *is* the math block.
+        -- This happens when the outer markdown parser recognizes a block and injects a latex parser.
+        if node:type() == "source_file" and not node:parent() then
+             return true
+        end
+
         node = node:parent()
     end
     return false
