@@ -231,6 +231,12 @@ function M.retrieve(is_math)
     parse_snippet({ trig = "@}", name = "Curve Bracket" }, "\\left\\{ $1 \\right\\\\}$0"),
     parse_snippet({ trig = "@|", name = "Abs Bracket" }, "\\left| $1 \\right|$0"),
     parse_snippet({ trig = "@>", name = "Angle Bracket" }, "\\left\\langle $1 \\right\\rangle$0"),
+
+    -- PSD operators
+    parse_snippet({ trig = "psd", name = "succeq" }, "\\succeq "),
+    parse_snippet({ trig = "pd", name = "succeq" }, "\\succ "),
+    parse_snippet({ trig = "nsd", name = "succeq" }, "\\preceq "),
+    parse_snippet({ trig = "nd", name = "succeq" }, "\\preq "),
   }
 end
 
