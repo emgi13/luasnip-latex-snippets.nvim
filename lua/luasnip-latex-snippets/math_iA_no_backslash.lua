@@ -35,7 +35,7 @@ function M.retrieve(is_math)
     -- Braket snippets
     with_priority({ trig = "bra", name = "bra" }, "\\bra{$1}$0"),
     with_priority({ trig = "ket", name = "ket" }, "\\ket{$1}$0"),
-    with_priority({ trig = "bk", name = "braket" }, "\\braket{$1}$0"),
+    with_priority({ trig = "bk", name = "braket" }, "\\braket{$1}{$2}$0"),
 
     -- Dagger
     parse_snippet({ trig = "dag", name = "Dagger" }, "^\\dagger"),
