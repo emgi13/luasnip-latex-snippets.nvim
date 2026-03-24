@@ -126,67 +126,127 @@ M.setup_markdown = function()
     parse_snippet({ trig = "mk", name = "Math" }, "$${1:${TM_SELECTED_TEXT}}$"),
     parse_snippet({ trig = "dm", name = "Block Math" }, "$$\n${1:${TM_SELECTED_TEXT}}\n$$"),
     parse_snippet(
+      { trig = "DOCUMENT", name = "Complete LaTeX Boilerplate with amsthm and cleveref" },
+      [[\documentclass{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{physics}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage[capitalize]{cleveref} % MUST be loaded after amsthm and hyperref
+
+% --- Theorem Environments ---
+
+% 1. Plain Style - Theorems and proofs share a counter
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+% 2. Definition Style - Independent counters, tied to section
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{exercise}{Exercise}[section]
+
+% 3. Remark Style - Independent counter, tied to section
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+
+% --- Document Information ---
+\title{${1:Document Title}}
+\author{${2:emgixiii}}
+\date{${3:\today}}
+
+\begin{document}
+\maketitle
+
+$0
+
+\end{document}]]
+    ),
+    parse_snippet(
       { trig = "BLE", name = "Lemma" },
-      [[\begin{lemma}{${1:Name}}{${2:Label}}
-${3:Statement}
+      [[\begin{lemma}\label{lem:${1:Label}}
+${2:Statement}
 \end{lemma}
+
 $0]]
     ),
     parse_snippet(
       { trig = "BTH", name = "Theorem" },
-      [[\begin{theorem}{${1:Name}}{${2:Label}}
-${3:Statement}
+      [[\begin{theorem}\label{thm:${1:Label}}
+${2:Statement}
 \end{theorem}
+
 $0]]
     ),
     parse_snippet(
       { trig = "BDE", name = "Definition" },
-      [[\begin{definition}{${1:Name}}{${2:Label}}
-${3:Statement}
+      [[\begin{definition}\label{def:${1:Label}}
+${2:Statement}
 \end{definition}
+
 $0]]
     ),
     parse_snippet(
       { trig = "BCO", name = "Corollary" },
-      [[\begin{corollary}{${1:Name}}{${2:Label}}
-${3:Statement}
+      [[\begin{corollary}\label{cor:${1:Label}}
+${2:Statement}
 \end{corollary}
+
 $0]]
     ),
     parse_snippet(
       { trig = "BEX", name = "Example" },
-      [[\begin{example}{${1:Name}}{${2:Label}}
-${3:Statement}
+      [[\begin{example}\label{ex:${1:Label}}
+${2:Statement}
 \end{example}
+
 $0]]
     ),
     parse_snippet(
       { trig = "BRE", name = "Remark" },
-      [[\begin{remark}{${1:Name}}{${2:Label}}
-${3:Statement}
+      [[\begin{remark}\label{rem:${1:Label}}
+${2:Statement}
 \end{remark}
+
 $0]]
     ),
     parse_snippet(
       { trig = "BQE", name = "Exercise" },
-      [[\begin{exercise}{${1:Name}}{${2:Label}}
-${3:Statement}
+      [[\begin{exercise}\label{exr:${1:Label}}
+${2:Statement}
 \end{exercise}
+
 $0]]
     ),
     parse_snippet(
       { trig = "BPR", name = "Proof" },
-      [[\begin{proofbox}{${1:Name}}
-${3:Statement}
-\end{proofbox}
+      [[\begin{proof}
+${1:Statement}
+\end{proof}
+
 $0]]
     ),
     parse_snippet(
       { trig = "BPP", name = "Proposition" },
-      [[\begin{proposition}{${1:Name}}
-${3:Statement}
+      [[\begin{proposition}\label{prop:${1:Label}}
+${2:Statement}
 \end{proposition}
+
 $0]]
+    ),
+    parse_snippet(
+      { trig = "REF", name = "cleveref reference (lowercase)" },
+      [[\cref{${1:label}}$0]]
+    ),
+    parse_snippet(
+      { trig = "CRF", name = "cleveref reference (Capitalized)" },
+      [[\Cref{${1:label}}$0]]
     ),
   }
   vim.list_extend(filtered, normal_wA_tex)
