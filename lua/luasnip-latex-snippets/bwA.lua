@@ -57,7 +57,6 @@ function M.retrieve(not_math)
 \usepackage{amsthm}
 \usepackage{natbib}
 \usepackage{hyperref}
-\usepackage[capitalize]{cleveref} % MUST be loaded after amsthm and hyperref
 
 % --- Theorem Environments ---
 
@@ -161,14 +160,6 @@ ${2:Statement}
 \end{proposition}
 
 $0]]
-    ),
-    parse_snippet(
-      { trig = "REF", name = "cleveref reference (lowercase)" },
-      [[\cref{${1:label}}$0]]
-    ),
-    parse_snippet(
-      { trig = "CRF", name = "cleveref reference (Capitalized)" },
-      [[\Cref{${1:label}}$0]]
     ),
   }
 end
