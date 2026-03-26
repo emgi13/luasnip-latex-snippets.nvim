@@ -53,6 +53,7 @@ function M.retrieve(not_math)
 \usepackage[margin=1.5cm]{geometry}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{dsfont}
 \usepackage{physics}
 \usepackage{amsthm}
 \usepackage{natbib}
