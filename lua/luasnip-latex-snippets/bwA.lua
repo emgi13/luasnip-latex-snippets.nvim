@@ -92,56 +92,56 @@ $0
     ),
     parse_snippet(
       { trig = "BLE", name = "Lemma" },
-      [[\begin{lemma}\label{lem:${1:Label}}
-${2:Statement}
+      [[\begin{lemma}[$2]\label{lem:${1:Label}}
+${3:Statement}
 \end{lemma}
 
 $0]]
     ),
     parse_snippet(
       { trig = "BTH", name = "Theorem" },
-      [[\begin{theorem}\label{thm:${1:Label}}
-${2:Statement}
+      [[\begin{theorem}[$2]\label{thm:${1:Label}}
+${3:Statement}
 \end{theorem}
 
 $0]]
     ),
     parse_snippet(
       { trig = "BDE", name = "Definition" },
-      [[\begin{definition}\label{def:${1:Label}}
-${2:Statement}
+      [[\begin{definition}[$2]\label{def:${1:Label}}
+${3:Statement}
 \end{definition}
 
 $0]]
     ),
     parse_snippet(
       { trig = "BCO", name = "Corollary" },
-      [[\begin{corollary}\label{cor:${1:Label}}
-${2:Statement}
+      [[\begin{corollary}[$2]\label{cor:${1:Label}}
+${3:Statement}
 \end{corollary}
 
 $0]]
     ),
     parse_snippet(
       { trig = "BEX", name = "Example" },
-      [[\begin{example}\label{ex:${1:Label}}
-${2:Statement}
+      [[\begin{example}[$2]\label{ex:${1:Label}}
+${3:Statement}
 \end{example}
 
 $0]]
     ),
     parse_snippet(
       { trig = "BRE", name = "Remark" },
-      [[\begin{remark}\label{rem:${1:Label}}
-${2:Statement}
+      [[\begin{remark}[$2]\label{rem:${1:Label}}
+${3:Statement}
 \end{remark}
 
 $0]]
     ),
     parse_snippet(
       { trig = "BQE", name = "Exercise" },
-      [[\begin{exercise}\label{exr:${1:Label}}
-${2:Statement}
+      [[\begin{exercise}[$2]\label{exr:${1:Label}}
+${3:Statement}
 \end{exercise}
 
 $0]]
@@ -156,8 +156,8 @@ $0]]
     ),
     parse_snippet(
       { trig = "BPP", name = "Proposition" },
-      [[\begin{proposition}\label{prop:${1:Label}}
-${2:Statement}
+      [[\begin{proposition}[$2]\label{prop:${1:Label}}
+${3:Statement}
 \end{proposition}
 
 $0]]
